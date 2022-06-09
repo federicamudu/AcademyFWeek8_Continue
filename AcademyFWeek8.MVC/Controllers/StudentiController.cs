@@ -32,6 +32,7 @@ namespace AcademyFWeek8.MVC.Controllers
             var studenteVM = studente.ToStudenteViewModel();
             return View(studenteVM);
         }
+        [Authorize(Policy = "Adm")]
         [HttpGet]
         public IActionResult Create()
         {

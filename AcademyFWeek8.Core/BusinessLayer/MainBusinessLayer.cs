@@ -207,6 +207,7 @@ namespace AcademyFWeek8.Core.BusinessLayer
 
 
         #endregion Funzionalità Corsi
+        #region Utente
         public Utente GetAccount(string username)
         {
             if (string.IsNullOrEmpty(username))
@@ -215,5 +216,39 @@ namespace AcademyFWeek8.Core.BusinessLayer
             }
             return utentiRepo.GetByUsername(username);
         }
+        public Esito EliminaUtente(string userUtenteDaEliminare)
+        {
+            var utenteEsistente = utentiRepo.GetByUsername(userUtenteDaEliminare);
+            if (utenteEsistente == null)
+            {
+                return new Esito { Messaggio = "Nessun utente corrispondente all'user inserito", IsOk = false };
+            }
+            utentiRepo.Delete(utenteEsistente);
+            return new Esito { Messaggio = "utente eliminato correttamente", IsOk = true };
+        }
+        public List<Utente> GetAllUtenti()
+        {
+            return utentiRepo.GetAll();
+        }
+
+        public Esito InserisciNuovoUtente(Utente nuovoUtente)
+        {
+            utentiRepo.Add(nuovoUtente);
+            return new Esito { Messaggio = "Utente inserito correttamente", IsOk = true };
+        }
+        public Esito ModificaPasswordUtente(string userUtenteDaModificare, string nuovaPassword)
+        {
+            //controllo input
+            //controllo se id esiste
+            var utente = utentiRepo.GetByUsername(userUtenteDaModificare);
+            if (utente == null)
+            {
+                return new Esito { Messaggio = "Username errato o inesistente", IsOk = false };
+            }
+            utente.Password = nuovaPassword;
+            utentiRepo.Update(utente);
+            return new Esito { Messaggio = "Password aggiornato correttamente", IsOk = true };
+        }
+        #endregion
     }
 }

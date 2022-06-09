@@ -28,6 +28,10 @@ namespace AcademyFWeek8.Core.BusinessLayer
         Esito InserisciNuovaLezione(Lezione nuovaLezione);
         Esito ModificaAulaLezione(int idLezioneDaModificare, string nuovaAula);
         Utente GetAccount(string username);
+        Esito EliminaUtente(string userUtenteDaEliminare);
+        List<Utente> GetAllUtenti();
+        Esito InserisciNuovoUtente(Utente nuovoUtente);
+        Esito ModificaPasswordUtente(string userUtenteDaModificare, string nuovaPassword);
 
     }
 }

@@ -20,6 +20,28 @@ namespace AcademyFWeek8.MVC.Helper
                 Studenti = listStudentiVM
             };
         }
+        public static UtenteLoginViewModel ToUtenteViewModel(this Utente u)
+        {
+            return new UtenteLoginViewModel
+            {
+                Id = u.Id,
+                Username = u.Username,
+                Password = u.Password,
+                Ruolo = u.Ruolo,
+                ReturnUrl = u.ReturnUrl
+            };
+        }
+        public static Utente ToUtente(this UtenteLoginViewModel u)
+        {
+            return new Utente
+            {
+                Id=u.Id,
+                Username=u.Username,
+                Password=u.Password,
+                Ruolo=u.Ruolo,
+                ReturnUrl=u.ReturnUrl
+            };
+        }
         public static DocenteViewModel ToDocenteViewModel(this Docente d)
         {
             List<LezioneViewModel> listLezioni = new List<LezioneViewModel>();

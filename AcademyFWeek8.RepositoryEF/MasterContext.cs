@@ -15,7 +15,7 @@ namespace AcademyFWeek8.RepositoryEF
         public DbSet<Corso> Corsi { get; set; }
         public DbSet<Lezione> Lezioni { get; set; }
         public DbSet<Docente> Docenti { get; set; }
-        public DbSet<Utente> Utente { get; set; }
+        public DbSet<Utente> Utenti { get; set; }
         public MasterContext()
         {
 
