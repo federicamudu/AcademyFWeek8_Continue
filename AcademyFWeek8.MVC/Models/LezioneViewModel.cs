@@ -12,7 +12,7 @@ namespace AcademyFWeek8.MVC.Models
 
         //Fk verso docente
         public int DocenteID { get; set; }
-        public ICollection<DocenteViewModel>? Docente { get; set; } = new List<DocenteViewModel>();
+        public DocenteViewModel? Docente { get; set; }// = new List<DocenteViewModel>();
 
         //Fk verso Corso
         public string CorsoCodice { get; set; }
