@@ -10,5 +10,7 @@
     <input asp-for="Password" />
     <span asp-validation-for="Password"></span>
     <input type="submit" value="Login" class="btn btn-primary" />
+    <p>Se non sei ancora registrato clicca sul pulsante sotto! </p>
+    <a type=button class="btn btn-primary" asp-controller="Utenti" asp-action="Create">Registrati!</a>
     <br />
 </form>

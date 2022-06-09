@@ -10,7 +10,7 @@ namespace AcademyFWeek8.MVC.Models
         public string Username { get; set; }
         [Required, DataType(DataType.Password)]
         public string Password { get; set; }
-        public string ReturnUrl { get; set; } = "/";
+        public string ReturnUrl { get; set; } //= "/";
         public Ruolo Ruolo { get; set; } = Ruolo.User;
     }
 }

@@ -89,13 +89,12 @@ namespace AcademyFWeek8.MVC.Controllers
             var utenteVM = utenti.ToUtenteViewModel();
             return View(utenteVM);
         }
-        [Authorize(Policy = "Adm")]
+        
         [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
-        [Authorize(Policy = "Adm")]
         [HttpPost]
         public IActionResult Create(UtenteLoginViewModel utenteVM)
         {
