@@ -1,0 +1,39 @@
+﻿@model LezioneViewModel
+<h1>Modifica Aula della lezione del corso @Model.CorsoCodice</h1>
+<form method="post">
+    <div class="form-group">
+    <label asp-for="LezioneId"></label>
+    <input asp-for="LezioneId" class="form-control" readonly/>
+    <span asp-validation-for="LezioneId" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="DataOraInizio">Data e Ora di inizio</label>
+    <input asp-for="DataOraInizio" class="form-control" readonly/>
+    <span asp-validation-for="DataOraInizio" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="Durata">Durata della lezione</label>
+    <input asp-for="Durata" class="form-control" readonly/>
+    <span asp-validation-for="Durata" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Aula">Aula</label>
+    <input asp-for="Aula" class="form-control" />
+    <span asp-validation-for="Aula" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="DocenteID">Docente Assegnato</label> @*da fare a tendina come in studente*@
+    <input asp-for="DocenteID" class="form-control" readonly/>
+    <span asp-validation-for="Docente" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label asp-for="CorsoCodice">Corso Assegnato</label> @*da fare a tendina come in studente*@
+    <input asp-for="CorsoCodice" class="form-control" readonly/>
+    <span asp-validation-for="Corso" class="text-danger"></span>
+</div>
+<br />
+<input type="submit" value="Salva Modifica" class="btn btn-primary" />
+<input type="reset" value="Reset" class="btn btn-primary" />
+<a class="btn btn-primary" asp-controller="Lezioni" asp-action="Index">Indietro</a>
+</form>

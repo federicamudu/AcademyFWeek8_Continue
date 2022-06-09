@@ -1,0 +1,44 @@
+﻿@model StudenteViewModel
+<h1>Eliminazione dello studente @Model.Nome @Model.Cognome</h1>
+<p>Sei sicuro di voler cancellare lo studente?</p>
+<br />
+<form method="post">
+<div class="form-group">
+    <label asp-for="ID">Id studente</label>
+    <input asp-for="ID" class="form-control" readonly/>
+    <span asp-validation-for="ID" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="Nome">Nome studente</label>
+    <input asp-for="Nome" class="form-control" readonly />
+    <span asp-validation-for="Nome" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="Cognome">Cognome studente</label>
+    <input asp-for="Cognome" class="form-control" readonly/>
+    <span asp-validation-for="Cognome" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="DataNascita">Data di nascita</label>
+    <input asp-for="DataNascita" class="form-control" readonly/>
+    <span asp-validation-for="DataNascita" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="Email">E-mail</label>
+    <input asp-for="Email" class="form-control" readonly/>
+    <span asp-validation-for="Email" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label asp-for="TitoloStudio">Titolo di Studio</label>
+    <input asp-for="TitoloStudio" class="form-control" readonly/>
+    <span asp-validation-for="TitoloStudio" class="text-danger"></span>
+</div>
+<br />
+<input type="submit" value="Elimina studente" class="btn btn-danger" />
+<a class="btn btn-primary" asp-controller="Studenti" asp-action="Index">Indietro</a>
+</form>
